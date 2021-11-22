@@ -53,7 +53,7 @@ def display_the_welcome_screen():
 def show_balance(user_account):
     print(user_account.fetch_balance())
     
-def handle_credit(user_account):
+def parse_dollars_and_cents():
     print('Enter Amount')
     entered_text=input()
     dollars=0
@@ -65,24 +65,17 @@ def handle_credit(user_account):
         else:
             cents=int(units[:-1])
             
-    user_account.add_money(dollars,cents)
-        
+    return dollars,cents
     
     
 def handle_debit(user_account):
-    print('Enter Amount')
-    entered_text=input()
-    dollars=0
-    cents=0
-    
-    for units in entered_text.split():
-        if units[-1]=='D':
-            dollars=int(units[:-1])
-        else:
-            cents=int(units[:-1])
-            
+    dollars,cents=parse_dollars_and_cents()
     user_account.withdraw_money(dollars,cents)
-
+    
+    
+def handle_credit(user_account):
+    dollars,cents=parse_dollars_and_cents()
+    user_account.add_money(dollars,cents)
 
 
 if __name__ == "__main__":
