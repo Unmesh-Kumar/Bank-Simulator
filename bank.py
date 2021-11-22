@@ -52,7 +52,7 @@ def display_the_welcome_screen():
     print('3. Check Balance')
     print('4. Exit')
     
-def show_balance(user_account):
+def show_balance(user_account: Account):
     print(user_account.fetch_balance())
     
 def parse_dollars_and_cents():
@@ -70,12 +70,12 @@ def parse_dollars_and_cents():
     return dollars,cents
     
     
-def handle_debit(user_account):
+def handle_debit(user_account: Account):
     dollars,cents=parse_dollars_and_cents()
     user_account.withdraw_money(dollars,cents)
     
     
-def handle_credit(user_account):
+def handle_credit(user_account: Account):
     dollars,cents=parse_dollars_and_cents()
     user_account.add_money(dollars,cents)
 
