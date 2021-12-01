@@ -1,3 +1,5 @@
+It is my code for the assignment given in Gojek Software Engineer Full time hiring process
+
 The project contains the implementaion of a Bank Simulator can lets a person to deposit money, withdraw money and see the balance in the account.
 
 The Bank simulator has support for negative balance as well and negative amount can be credited and withdrawn from the account as well.
